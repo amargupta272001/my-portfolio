@@ -2,9 +2,9 @@ import React from 'react'
 import { motion, useScroll } from 'framer-motion'
 import LiIcon from '../components/LiIcon'
 
-const Details = ({ type, time, place, info }) => {
+const Details = ({ key, type, time, place, info }) => {
     const ref = React.useRef(null)
-    return (<li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[70%] mx-auto flex flex-col items-start justify-between md:w-[80%]'>
+    return (<li key={key} ref={ref} className='my-8 first:mt-0 last:mb-0 w-[70%] mx-auto flex flex-col items-start justify-between md:w-[80%]'>
         <LiIcon reference={ref} />
         <motion.div
             initial={{ y: 50 }}
@@ -57,6 +57,7 @@ const Education = () => {
                 <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
                     {detailsData.map(detail => (
                         <Details
+                            key={detail.id}
                             type={detail.type}
                             time={detail.time}
                             place={detail.place}
