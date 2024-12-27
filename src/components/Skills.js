@@ -32,12 +32,26 @@ const Skills = () => {
                 <Skill name="CSS" x="-5vw" y="-10vw" />
                 <Skill name="Javascript" x="20vw" y="6vw" />
                 <Skill name="ReactJs" x="0vw" y="12vw" />
+                <Skill name="Redux" x="12vw" y="13vw" />
                 <Skill name="NextJs" x="-20vw" y="-15vw" />
-                <Skill name="GatsbyJS" x="15vw" y="-12vw" />
-                <Skill name="Web Design" x="32vw" y="-5vw" />
-                <Skill name="Figma" x="0vw" y="-20vw" />
-                <Skill name="Firebase" x="-25vw" y="18vw" />
-                <Skill name="Tailwind CSS" x="18vw" y="18vw" />
+                <Skill name="Microfrontend" x="15vw" y="-12vw" />
+                <Skill name="NodeJS" x="32vw" y="-5vw" />
+                <Skill name="Typescript" x="0vw" y="-20vw" />
+                <Skill name="Graphql" x="-13vw" y="8vw" />
+                <Skill name="Module Federation" x="17vw" y="18vw" />
+                <Skill name="MongoDB" x="35vw" y="4vw" />
+                <Skill name="AWS" x="-26vw" y="12vw" />
+                <Skill name="Storybook" x="-35vw" y="1vw" />
+                <Skill name="Webpack" x="-21vw" y="-6vw" />
+                <Skill name="System Design" x="-16vw" y="-23vw" />
+                <Skill name="Git" x="15vw" y="-3vw" />
+                <Skill name="Optimizely" x="20vw" y="-20vw" />
+                <Skill name="Agile" x="-1vw" y="19vw" />
+                <Skill name="Swagger" x="4vw" y="7vw" />
+                <Skill name="Figma" x="-12vw" y="-2vw" />
+                <Skill name="Cloudinary" x="-35vw" y="-8vw" />
+                <Skill name="GTM" x="-13vw" y="15vw" />
+                <Skill name="SQL" x="3vw" y="-7vw" />
             </div>
         </>
     )
