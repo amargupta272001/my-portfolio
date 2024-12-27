@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   }
 }

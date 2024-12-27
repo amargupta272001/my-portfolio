@@ -4,19 +4,48 @@ import Layout from '../components/Layout'
 import AnimatedText from '../components/AnimatedText'
 import Link from 'next/link'
 import Image from 'next/image'
-import article1 from "../../public/images/articles/pagination component in reactjs.jpg"
-import article2 from "../../public/images/articles/create loading screen in react js.jpg"
+import article1 from "../../public/images/articles/article1.png"
+import article2 from "../../public/images/articles/article2.png"
+import article3 from "../../public/images/articles/article3.jpeg"
 import { motion, useMotionValue } from "framer-motion"
-import article3 from "../../public/images/articles/create modal component in react using react portals.png"
 import TransitionEffect from '../components/TransitionEffect'
 
 const FramerImage = motion(Image)
+
+
+const articleData = [{
+    img: article1,
+    title: "🔍 The Rise of AI: Navigating the Ethical Frontier 🌐",
+    time: "5 min read",
+    summary: `Artificial Intelligence is reshaping our world at lightning speed! From transforming industries to enhancing our daily lives, AI brings incredible potential. But with great power comes great responsibility. 🚀🤖
+    \n, I dive into the ethical challenges of AI—from privacy and surveillance to bias and fairness. How do we balance innovation with ethical considerations?`,
+    link: "https://amargupta272001.medium.com/rise-ai-ethical-implications-tech-trends-ee49a5939643",
+    type: 'featured_article'
+},
+{
+    img: article2,
+    title: "🌟 The Ethical Frontiers of Artificial Intelligence: Principles and Real-World Applications 🚀 🌟",
+    time: "5 min read",
+    summary: `Artificial Intelligence is reshaping industries at an unprecedented pace, but are we ready to tackle the ethical challenges that come with it? 🤖✨`,
+    link: "https://amargupta272001.medium.com/the-ethical-frontiers-of-artificial-intelligence-principles-and-real-world-applications-696de14f514f",
+    type: 'featured_article'
+},
+{
+    img: article3,
+    title: "🌟 The Internet of Things (IoT) 🌟",
+    time: "5 min read",
+    summary: `The Internet of Things (IoT) refers to the connection of everyday objects to the internet, enabling them to collect and exchange data with each other and with us. The idea behind IoT is to make our lives easier and more efficient by automating various tasks and creating smart environments.`,
+    link: "https://tech-reef.blogspot.com/2023/03/internet-of-things-iot.html",
+    type: 'featured_article'
+},
+
+]
 const FeaturedArticle = ({ img, title, time, summary, link }) => {
     return (
         <li className='relative col-span-1 w-full p-4 bg-light dark:bg-dark border border-solid border-dark dark:border-light rounded-2xl'>
             <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl' />
             <Link href={link} target='_blank' className='w-full inline-block cursor-pointer overflow-hidden rounded-lg'>
-                <FramerImage src={img} alt={title} className="w-full h-auto"
+                <FramerImage src={img} alt={title} className="w-full h-auto !opacity-100"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                     initial={{ opacity: 0 }}
@@ -30,7 +59,6 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
             <span className='text-primary dark:text-primaryDark font-semibold'>{time}</span>
         </li>
     )
-
 }
 
 const MovingImg = ({ title, img, link }) => {
@@ -91,71 +119,34 @@ const Articles = () => {
                 <Layout className='pt-16'>
                     <AnimatedText text="Words Can Change The World! " className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl' />
                     <ul className='grid grid-cols-2 gap-16 md:grid-cols-1 lg:gap-8 md:gap-y-16 '>
-                        <FeaturedArticle
-                            img={article1}
-                            title="Build A Custom Pagination Component In Reactjs From Scratch"
-                            time="9 min read"
-                            summary="Learn how to build a custom pagination component in ReactJS from scratch.
-                        Follow this step-by-step guide to integrate Pagination component in your ReactJS project."
-                            link="/"
-                        />
-
-                        <FeaturedArticle
-                            img={article2}
-                            title="Build A Custom Pagination Component In Reactjs From Scratch"
-                            time="9 min read"
-                            summary="Learn how to build a custom pagination component in ReactJS from scratch.
-                        Follow this step-by-step guide to integrate Pagination component in your ReactJS project."
-                            link="/"
-                        />
+                        {articleData?.filter(a => a.type === "featured_article")?.map((article, index) => {
+                            const { img, title, time, summary, link } = article;
+                            return (
+                                <FeaturedArticle
+                                    img={img}
+                                    title={title}
+                                    time={time}
+                                    summary={summary}
+                                    link={link}
+                                    key={`featured-${index}`}
+                                />)
+                        })}
                     </ul>
 
                     <h2 className='font-semibold text-4xl w-full text-center my-16 mt-32'>All Articles</h2>
 
                     <ul>
-                        <Article
-                            img={article3}
-                            title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-                            date="June 5, 2024"
-                            link="/"
-                        />
-                        <Article
-                            img={article3}
-                            title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-                            date="June 5, 2024"
-                            link="/"
-                        />
-                        <Article
-                            img={article3}
-                            title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-                            date="June 5, 2024"
-                            link="/"
-                        />
-                        <Article
-                            img={article3}
-                            title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-                            date="June 5, 2024"
-                            link="/"
-                        />
-                        <Article
-                            img={article3}
-                            title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-                            date="June 5, 2024"
-                            link="/"
-                        />
-                        <Article
-                            img={article3}
-                            title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-                            date="June 5, 2024"
-                            link="/"
-                        />
-                        <Article
-                            img={article3}
-                            title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-                            date="June 5, 2024"
-                            link="/"
-                        />
-
+                        {articleData?.filter(a => a.type === "featured_article")?.map((article, index) => {
+                            const { img, title, time, link } = article;
+                            return (
+                                <Article
+                                    img={img}
+                                    title={title}
+                                    date={time}
+                                    link={link}
+                                    key={`article-${index}`}
+                                />)
+                        })}
                     </ul>
                 </Layout>
             </main>
